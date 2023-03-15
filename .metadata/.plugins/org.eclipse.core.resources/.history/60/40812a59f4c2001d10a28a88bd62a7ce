@@ -1,0 +1,9 @@
+package base.comp;
+
+public class BasePanel {
+
+	public BasePanel() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

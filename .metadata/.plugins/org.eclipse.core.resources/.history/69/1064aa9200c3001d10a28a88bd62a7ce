@@ -1,0 +1,80 @@
+package framse;
+
+import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import base.comp.BaseFrame;
+import base.comp.BaseLable;
+import base.comp.ImageLable;
+import base.comp.message;
+
+public class MainFrame extends BaseFrame {
+
+	private JTextField jtId;
+	private JPasswordField jtPw;
+	private JButton jbAnalysis;
+	private JButton jbSignUp;
+	private JButton jbLogin;
+
+	public MainFrame() {
+		// TODO Auto-generated constructor stub
+		super.BaseFrame("메인", 666, 529, null);
+
+	}
+
+	@Override
+	public void setComp() {
+		// TODO Auto-generated method stub
+		jtId = new JTextField(10);
+		jtPw = new JPasswordField(10);
+
+		jbLogin = new JButton("로그인");
+		jbSignUp = new JButton("회원가입");
+		jbAnalysis = new JButton("대륙별분석");
+
+	}
+
+	@Override
+	public void setDesign() {
+		// TODO Auto-generated method stub
+		jpTop.addChild();
+		jpTop.jpCenter.add(new ImageLable(null, "구름.jpg", 666, 200));
+		jpTop.jpBottom.add(new BaseLable("SKY AIRLINE", 30).setCenter());
+		jpCenter.add(new ImageLable(null, "비행기.jpg", 150, 150).setCenter());
+
+		jpBottom.addChild();
+		jpBottom.jpCenter.addChild();
+		jpBottom.jpCenter.setEmptyBorder(5, 200, 5, 200);
+		;
+		jpBottom.jpCenter.jpLeft.setGird(2, 1, 15, 15).add(new BaseLable("ID:"));
+		jpBottom.jpCenter.jpLeft.add(new BaseLable("PW:"));
+		jpBottom.jpCenter.jpLeft.setEmptyBorder(10, 10, 10, 10);
+
+		jpBottom.jpCenter.jpCenter.setGird(2, 1, 15, 15).add(jtId);
+		jpBottom.jpCenter.jpCenter.add(jtPw);
+
+		jpBottom.jpBottom.setFlowCenter().add(jbLogin);
+		jpBottom.jpBottom.add(jbSignUp);
+		jpBottom.jpBottom.add(jbAnalysis);
+	}
+
+	@Override
+	public void events() {
+		// TODO Auto-generated method stub
+		jbLogin.addActionListener(e -> {
+			String id = jtId.getText();
+			String pw = jtPw.getText();
+			
+			if (id.isBlank() || pw.isBlank()) {
+				message.error("공백이 있습니다.");
+				jtId.setText("");
+				jtPw.setText("");
+				jtId.requestFocus();
+				return;
+				
+			}
+		});
+	}
+
+}

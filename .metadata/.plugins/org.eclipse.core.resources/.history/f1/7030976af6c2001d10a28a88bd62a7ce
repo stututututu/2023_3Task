@@ -1,0 +1,36 @@
+package framse;
+
+import base.comp.BaseFrame;
+import base.comp.ImageLable;
+
+public class MainFrame extends BaseFrame{
+
+	public MainFrame() {
+		// TODO Auto-generated constructor stub
+		super.BaseFrame("메인", 545, 518, null);
+		
+	}
+
+	@Override
+	public void setComp() {
+		// TODO Auto-generated method stub
+		
+		
+	}
+
+	@Override
+	public void setDesign() {
+		// TODO Auto-generated method stub
+		jpTop.add(new ImageLable(null, "구름.jpg", 545, 200));
+		
+		
+	}
+
+	@Override
+	public void events() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

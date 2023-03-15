@@ -1,0 +1,9 @@
+package base.comp;
+
+public class message {
+
+	public message() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

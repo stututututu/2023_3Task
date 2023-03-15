@@ -1,0 +1,50 @@
+package framse;
+
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import base.comp.BaseFrame;
+import base.comp.BaseLable;
+import base.comp.ImageLable;
+
+public class MainFrame extends BaseFrame {
+
+	private JTextField jtId;
+	private JPasswordField jtPw;
+
+	public MainFrame() {
+		// TODO Auto-generated constructor stub
+		super.BaseFrame("메인", 700, 600, null);
+
+	}
+
+	@Override
+	public void setComp() {
+		// TODO Auto-generated method stub
+		jtId = new JTextField(10);
+		jtPw = new JPasswordField(10);
+	}
+
+	@Override
+	public void setDesign() {
+		// TODO Auto-generated method stub
+		jpTop.addChild();
+		jpTop.jpCenter.add(new ImageLable(null, "구름.jpg", 545, 200));
+		jpTop.jpBottom.add(new BaseLable("SKY AIRLINE", 30).setCenter());
+		jpCenter.add(new ImageLable(null, "비행기.jpg", 150, 150).setCenter());
+
+		jpBottom.addChild();
+		jpBottom.jpCenter.addChild();
+		jpBottom.jpCenter.jpLeft.setGird(2, 1, 10, 10).add(new BaseLable("아이디"));
+		jpBottom.jpCenter.jpLeft.add(new BaseLable("비밀번호"));
+		jpBottom.jpCenter.jpCenter.setGird(2, 1, 10, 10).add(jtId);
+		jpBottom.jpCenter.jpCenter.add(jtPw);
+	}
+
+	@Override
+	public void events() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

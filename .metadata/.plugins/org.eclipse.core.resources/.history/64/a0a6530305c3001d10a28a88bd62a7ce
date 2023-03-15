@@ -1,0 +1,65 @@
+package framse;
+
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
+import base.comp.BaseFrame;
+import base.comp.BaseLable;
+
+public class SignUpFrame extends BaseFrame{
+
+	private JTextField jtId;
+	private JTextField jtPw;
+	private JTextField jtKName;
+	private JTextField jtEName;
+	private JTextField jtBirth;
+	private JButton jbCheck;
+	private JButton jbSignUp;
+
+	public SignUpFrame(MainFrame mainFrame) {
+		// TODO Auto-generated constructor stub
+		super.BaseFrame("회원가입", 500, 400, mainFrame);
+	}
+
+	@Override
+	public void setComp() {
+		// TODO Auto-generated method stub
+		jtId = new JTextField(10);
+		jtPw = new JTextField(10);
+		jtKName = new JTextField(10);
+		jtEName = new JTextField(10);
+		jtBirth = new JTextField(10);
+		
+		jbCheck = new JButton("중복확인");
+		jbSignUp = new JButton("회원가입");
+		
+		
+	}
+
+	@Override
+	public void setDesign() {
+		// TODO Auto-generated method stub
+		jpTop.add(new BaseLable("회원가입", 30).setCenter());
+		
+		jpCenter.addChild();
+		jpCenter.jpLeft.setGird(5, 1, 10, 10).add(new BaseLable("아이디"));
+		jpCenter.jpLeft.add(new BaseLable("비밀번호"));
+		jpCenter.jpLeft.add(new BaseLable("이름(한글)"));
+		jpCenter.jpLeft.add(new BaseLable("이름(영문)"));
+		jpCenter.jpLeft.add(new BaseLable("생년월일"));
+		
+		jpCenter.jpCenter.setGird(5, 1, 10, 10).add(jtId);
+		jpCenter.jpCenter.add(jtPw);
+		jpCenter.jpCenter.add(jtKName);
+		jpCenter.jpCenter.add(jtEName);
+		jpCenter.jpCenter.add(jtBirth);
+		
+	}
+
+	@Override
+	public void events() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

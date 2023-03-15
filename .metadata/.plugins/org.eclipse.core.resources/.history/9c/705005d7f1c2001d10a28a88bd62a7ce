@@ -1,0 +1,5 @@
+package base.comp;
+
+public interface IDesign {
+
+}

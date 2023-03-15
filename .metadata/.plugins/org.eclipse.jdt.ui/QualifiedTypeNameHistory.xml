@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="org.graalvm.compiler.hotspot.aarch64.AArch64HotSpotLoadAddressOp"/>
+    <fullyQualifiedTypeName name="java.lang.Process"/>
+    <fullyQualifiedTypeName name="org.graalvm.compiler.nodes.memory.SideEffectFreeWrite"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="com.sun.tools.javap.TryBlockWriter"/>
+    <fullyQualifiedTypeName name="framse.MainFrame"/>
+    <fullyQualifiedTypeName name="java.awt.event.WindowAdapter"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="javax.swing.JFrame"/>
+    <fullyQualifiedTypeName name="java.awt.event.ComponentAdapter"/>
+    <fullyQualifiedTypeName name="javax.swing.JPanel"/>
+    <fullyQualifiedTypeName name="java.awt.GridLayout"/>
+    <fullyQualifiedTypeName name="java.awt.FlowLayout"/>
+    <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
+    <fullyQualifiedTypeName name="java.awt.Image"/>
+    <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
+    <fullyQualifiedTypeName name="java.awt.Color"/>
+    <fullyQualifiedTypeName name="java.awt.Font"/>
+    <fullyQualifiedTypeName name="base.comp.ImageLable"/>
+    <fullyQualifiedTypeName name="jdk.tools.jlink.resources.jlink"/>
+    <fullyQualifiedTypeName name="javax.swing.JLabel"/>
+    <fullyQualifiedTypeName name="javax.swing.JPasswordField"/>
+    <fullyQualifiedTypeName name="sun.text.resources.ext.JavaTimeSupplementary_en_IE"/>
+    <fullyQualifiedTypeName name="javax.swing.border.EmptyBorder"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="java.util.Vector"/>
+    <fullyQualifiedTypeName name="javax.swing.JTextField"/>
+    <fullyQualifiedTypeName name="javax.swing.JButton"/>
+    <fullyQualifiedTypeName name="com.sun.crypto.provider.JceKeyStore"/>
+    <fullyQualifiedTypeName name="base.comp.BaseLable"/>
+    <fullyQualifiedTypeName name="base.comp.BasePanel"/>
+    <fullyQualifiedTypeName name="java.lang.StrictMath"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.compiler.Pattern"/>
+    <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
+    <fullyQualifiedTypeName name="javax.xml.crypto.Data"/>
+    <fullyQualifiedTypeName name="framse.SignUpFrame"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="base.comp.BaseFrame"/>
+    <fullyQualifiedTypeName name="jdbc.DbManager"/>
+    <fullyQualifiedTypeName name="model.model"/>
+    <fullyQualifiedTypeName name="base.comp.message"/>
+</qualifiedTypeNameHistroy>

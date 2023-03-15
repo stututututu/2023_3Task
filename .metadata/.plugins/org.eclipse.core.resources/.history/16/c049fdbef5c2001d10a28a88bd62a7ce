@@ -1,0 +1,33 @@
+package framse;
+
+import base.comp.BaseFrame;
+
+public class MainFrame extends BaseFrame{
+
+	public MainFrame() {
+		// TODO Auto-generated constructor stub
+		super.BaseFrame("메인", 500, 500, null);
+		
+	}
+
+	@Override
+	public void setComp() {
+		// TODO Auto-generated method stub
+		
+		
+	}
+
+	@Override
+	public void setDesign() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void events() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

@@ -1,0 +1,14 @@
+package framse;
+
+import base.comp.BaseFrame;
+
+public class MainFrame extends BaseFrame{
+
+	public MainFrame() {
+		// TODO Auto-generated constructor stub
+		super.BaseFrame("메인", 500, 500, null);
+		
+	}
+	
+	
+}

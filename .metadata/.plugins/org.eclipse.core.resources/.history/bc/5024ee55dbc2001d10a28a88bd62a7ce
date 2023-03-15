@@ -1,0 +1,9 @@
+package setDb;
+
+public class DbCreat {
+
+	public DbCreat() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

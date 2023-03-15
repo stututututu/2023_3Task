@@ -1,0 +1,9 @@
+package base.comp;
+
+public class BaseFrame {
+
+	public BaseFrame() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

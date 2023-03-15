@@ -1,0 +1,9 @@
+package jdbc;
+
+public class DbManager {
+
+	public DbManager() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,9 @@
+package framse;
+
+public class EditInfoFrame {
+
+	public EditInfoFrame() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
