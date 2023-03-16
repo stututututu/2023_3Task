@@ -1,0 +1,9 @@
+package base.comp;
+
+public class BaseCombo {
+
+	public BaseCombo() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

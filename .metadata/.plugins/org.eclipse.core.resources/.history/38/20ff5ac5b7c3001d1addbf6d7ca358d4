@@ -1,0 +1,9 @@
+package framse;
+
+public class SearchFrame {
+
+	public SearchFrame() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

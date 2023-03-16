@@ -23,4 +23,9 @@ public class BaseLable extends JLabel {
 		super.setVerticalAlignment(JLabel.CENTER);
 		return this;
 	}
+	public BaseLable setEnadble() {
+		// TODO Auto-generated method stub
+		super.setEnabled(false);
+		return this;
+	}
 }

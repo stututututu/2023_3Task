@@ -1,0 +1,33 @@
+package framse;
+
+import java.util.Calendar;
+
+import base.comp.BaseFrame;
+
+public class calenderFrame extends BaseFrame{
+
+	public calenderFrame() {
+		// TODO Auto-generated constructor stub
+		super.BaseFrame("날짜선택", 500, 500, new SearchFrame(null));
+	}
+
+	@Override
+	public void setComp() {
+		// TODO Auto-generated method stub
+		cal = Calendar.getInstance();
+		
+	}
+
+	@Override
+	public void setDesign() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void events() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

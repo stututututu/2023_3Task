@@ -47,21 +47,21 @@ public class EditInfoFrame extends BaseFrame{
 		jpTop.add(new BaseLable("정보수정", 30).setCenter());
 		
 		jpCenter.addChild();
-		jpCenter.jpLeft.setGird(5, 1, 10, 10).add(new BaseLable("아이디"));
+		jpCenter.jpLeft.setGrid(5, 1, 10, 10).add(new BaseLable("아이디"));
 		jpCenter.jpLeft.add(new BaseLable("비밀번호"));
 		jpCenter.jpLeft.add(new BaseLable("이름(한글)"));
 		jpCenter.jpLeft.add(new BaseLable("이름(영문)"));
 		jpCenter.jpLeft.add(new BaseLable("생년월일"));
 		jpCenter.jpLeft.setEmptyBorder(5, 5, 5, 30);
 		
-		jpCenter.jpCenter.setGird(5, 1, 10, 10).add(jtId);
+		jpCenter.jpCenter.setGrid(5, 1, 10, 10).add(jtId);
 		jpCenter.jpCenter.add(jtPw);
 		jpCenter.jpCenter.add(jtKName);
 		jpCenter.jpCenter.add(jtEName);
 		jpCenter.jpCenter.add(jtBirth);
 		jpCenter.jpCenter.setEmptyBorder(5, 5, 5, 5);
 		
-		jpCenter.jpRight.setGird(5, 1, 12, 12).add(jbUpdata);
+		jpCenter.jpRight.setGrid(5, 1, 12, 12).add(jbUpdata);
 		jpCenter.jpRight.add(new BasePanel());
 		jpCenter.jpRight.add(new BasePanel());
 		jpCenter.jpRight.add(new BasePanel());

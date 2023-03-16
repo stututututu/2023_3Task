@@ -97,6 +97,9 @@ public class MainFrame extends BaseFrame {
 		jbLogout.addActionListener(e -> {
 			LogoutState();
 		});
+		jbSearch.addActionListener(e -> {
+			new SearchFrame(this);
+		});
 	}
 
 	private void LogoutState() {
@@ -107,11 +110,11 @@ public class MainFrame extends BaseFrame {
 		jpBottom.jpCenter.addChild();
 		jpBottom.jpCenter.setEmptyBorder(5, 200, 5, 200);
 		 
-		jpBottom.jpCenter.jpLeft.setGird(2, 1, 15, 15).add(new BaseLable("ID:"));
+		jpBottom.jpCenter.jpLeft.setGrid(2, 1, 15, 15).add(new BaseLable("ID:"));
 		jpBottom.jpCenter.jpLeft.add(new BaseLable("PW:"));
 		jpBottom.jpCenter.jpLeft.setEmptyBorder(10, 10, 10, 10);
 
-		jpBottom.jpCenter.jpCenter.setGird(2, 1, 15, 15).add(jtId);
+		jpBottom.jpCenter.jpCenter.setGrid(2, 1, 15, 15).add(jtId);
 		jpBottom.jpCenter.jpCenter.add(jtPw);
 
 		jpBottom.jpBottom.setFlowCenter().add(jbLogin);

@@ -1,0 +1,43 @@
+package framse;
+
+import java.util.Vector;
+
+import base.comp.BaseCombo;
+import base.comp.BaseFrame;
+import jdbc.DbManager;
+
+public class SearchFrame extends BaseFrame{
+
+	private Vector<Vector<String>> nation;
+	private BaseCombo jcStart;
+
+	public SearchFrame(MainFrame mainFrame) {
+		// TODO Auto-generated constructor stub
+		super.BaseFrame("항공권 조회", 400, 500, mainFrame);
+	}
+
+	@Override
+	public void setComp() {
+		// TODO Auto-generated method stub
+		nation = DbManager.db.getData("SELECT n_name FROM 2023지방_3.nation;");
+		jcStart = new BaseCombo("").dataCombo(nation);
+		jcArrive = new BaseCombo("").dataCombo(nation);
+		
+	}
+
+	@Override
+	public void setDesign() {
+		// TODO Auto-generated method stub
+		
+		jpCenter.addChild();
+		jpCenter.jpCenter.setGird(3, 1, 10, 10).add(jcStart);
+		
+	}
+
+	@Override
+	public void events() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

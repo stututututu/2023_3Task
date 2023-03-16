@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 public class BasePanel extends JPanel{
 	public BasePanel jpCenter;
@@ -21,7 +22,7 @@ public class BasePanel extends JPanel{
 		
 		super.setBackground(Color.white);
 	}
-	public BasePanel setGird(int w, int d, int hg, int vg) {
+	public BasePanel setGrid(int w, int d, int hg, int vg) {
 		// TODO Auto-generated constructor stub
 		super.setLayout(new GridLayout(w,d,hg,vg));
 		return this;
@@ -62,6 +63,11 @@ public class BasePanel extends JPanel{
 	}
 	public BasePanel setEmptyBorder(int t, int l, int b, int r) {
 		super.setBorder(new EmptyBorder(t, l, b, r));
+		return this;
+	}
+	public BasePanel setLine() {
+		// TODO Auto-generated method stub
+		super.setBorder(new LineBorder(Color.black));
 		return this;
 	}
 	

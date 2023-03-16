@@ -1,0 +1,30 @@
+package framse;
+
+import base.comp.BaseFrame;
+
+public class SearchFrame extends BaseFrame{
+
+	public SearchFrame() {
+		// TODO Auto-generated constructor stub
+		super.BaseFrame("항공권 조회", 400, 500, mainFrame);
+	}
+
+	@Override
+	public void setComp() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setDesign() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void events() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

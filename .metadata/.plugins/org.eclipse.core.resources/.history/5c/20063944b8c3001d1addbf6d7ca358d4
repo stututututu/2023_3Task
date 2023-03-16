@@ -1,0 +1,11 @@
+package base.comp;
+
+import javax.swing.JComboBox;
+
+public class BaseCombo extends JComboBox<String>{
+
+	public BaseCombo() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
