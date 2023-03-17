@@ -28,4 +28,11 @@ public class BaseLable extends JLabel {
 		super.setEnabled(false);
 		return this;
 	}
+	public BaseLable setTextBottom() {
+		// TODO Auto-generated method stub
+		super.setHorizontalAlignment(JLabel.CENTER);
+		super.setVerticalAlignment(JLabel.BOTTOM);
+		
+		return this;
+	}
 }

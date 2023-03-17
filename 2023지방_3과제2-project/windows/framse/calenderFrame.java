@@ -3,13 +3,17 @@ package framse;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Iterator;
+import java.util.Vector;
 
 import javax.swing.JLabel;
 
 import base.comp.BaseFrame;
 import base.comp.BaseLable;
 import base.comp.BasePanel;
+import jdbc.DbManager;
+import model.model;
 
 public class calenderFrame extends BaseFrame {
 
@@ -22,6 +26,9 @@ public class calenderFrame extends BaseFrame {
 	private int startWeek;
 	private int lastWeek;
 	private BasePanel jp;
+	private int nowWeek;
+	private Vector<Vector<String>> schedule;
+	private int now;
 
 	public calenderFrame() {
 		// TODO Auto-generated constructor stub
@@ -59,8 +66,6 @@ public class calenderFrame extends BaseFrame {
 		jpCenter.jpTop.add(new BaseLable("토").setCenter());
 		jpCenter.jpTop.add(new BaseLable("월").setCenter());
 
-		jpCenter.jpCenter.setGrid(6, 7, 0, 0);
-
 		Calrefresh();
 
 	}
@@ -69,47 +74,52 @@ public class calenderFrame extends BaseFrame {
 	public void events() {
 		// TODO Auto-generated method stub
 		up.addMouseListener(new MouseAdapter() {
-		
+
 			public void mousePressed(MouseEvent e) {
 				// TODO Auto-generated method stub
 				super.mousePressed(e);
 				cal.add(Calendar.MONTH, 1);
-				
+
 				year = cal.get(Calendar.YEAR);
-				month= cal.get(Calendar.MONTH) + 1;
-				
+				month = cal.get(Calendar.MONTH) + 1;
+				Calrefresh();
 				refresh();
-				
+
 			}
 		});
 		down.addMouseListener(new MouseAdapter() {
-			
+
 			@Override
 			public void mousePressed(MouseEvent e) {
 				// TODO Auto-generated method stub
 				super.mousePressed(e);
 				cal.add(Calendar.MONTH, -1);
-				
+
 				year = cal.get(Calendar.YEAR);
-				month= cal.get(Calendar.MONTH) + 1;
-				
+				month = cal.get(Calendar.MONTH) + 1;
+				Calrefresh();
 				refresh();
-				
+
 			}
 		});
-		
-		
+
 	}
+
 	public void Calrefresh() {
 		jpTop.removeAll();
-		
-		jl.setText(year + "년" +String.format("%02d", month) +"월");
-		
-		startWeek = cal.get(Calendar.DAY_OF_WEEK);
-		lastWeek = cal.get(Calendar.DAY_OF_MONTH);
-		
+		jpCenter.jpCenter.removeAll();
+		jpCenter.jpCenter.setGrid(6, 7, 0, 0);
+		jl.setText(year + "년" + String.format("%02d", month) + "월");
 
-		for (int i = 1; i <= startWeek - 1; i++) {
+		startWeek = cal.get(Calendar.DAY_OF_WEEK);
+		lastWeek = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+		nowWeek = cal.get(Calendar.DAY_OF_MONTH);
+		now = new Date().getMonth()+1;
+//		
+//		int day = lastWeek - startWeek;
+//		System.out.println(day);
+
+		for (int i = lastWeek - startWeek; i <= lastWeek; i++) {
 			jp = new BasePanel();
 
 			jp.add(new BaseLable(i + "").setEnadble().setCenter());
@@ -117,15 +127,68 @@ public class calenderFrame extends BaseFrame {
 			jpCenter.jpCenter.add(jp);
 			super.refresh();
 		}
+		if (now >= month) {
+			for (int i = 1; i <= nowWeek; i++) {
+				jp = new BasePanel();
+				
+				jp.add(new BaseLable(i + "").setCenter().setEnadble());
+				
+				
+				jp.setLine();
+				jpCenter.jpCenter.add(jp);
+				super.refresh();
+				
+			}
+			for (int i = nowWeek + 1; i <= lastWeek; i++) {
+				
+				jp = new BasePanel();
+				schedule = DbManager.db.getData(
+						"SELECT * FROM 2023지방_3.schedule where month(date) = ? and day(date) = ? and depart = ? and arrival = ?;",
+						month, i, model.depart, model.arrival);
+				jp.add(new BaseLable(i + "").setCenter());
+				if (schedule.size() != 0) {
+					jp.addChild();
+					jp.jpCenter.add(new BaseLable(i + "").setCenter());
+					jp.jpBottom.add(new BaseLable("(" + schedule.size() + ")").setTextBottom());
+					
+				}
+				
+				jp.setLine();
+				jpCenter.jpCenter.add(jp);
+				
+				super.refresh();
+				
+			}
+			for (int i = 1; i <= 42 - startWeek - lastWeek + 1; i++) {
+				jp = new BasePanel();
+				
+				jp.add(new BaseLable(i + "").setEnadble().setCenter());
+				jp.setLine();
+				jpCenter.jpCenter.add(jp);
+				super.refresh();
+				
+			}
+			
+		}
 		for (int i = 1; i <= lastWeek; i++) {
+			
 			jp = new BasePanel();
-
+			schedule = DbManager.db.getData(
+					"SELECT * FROM 2023지방_3.schedule where month(date) = ? and day(date) = ? and depart = ? and arrival = ?;",
+					month, i, model.depart, model.arrival);
 			jp.add(new BaseLable(i + "").setCenter());
+			if (schedule.size() != 0) {
+				jp.addChild();
+				jp.jpCenter.add(new BaseLable(i + "").setCenter());
+				jp.jpBottom.add(new BaseLable("(" + schedule.size() + ")").setTextBottom());
+				
+			}
 			
 			jp.setLine();
 			jpCenter.jpCenter.add(jp);
+			
 			super.refresh();
-
+			
 		}
 		for (int i = 1; i <= 42 - startWeek - lastWeek + 1; i++) {
 			jp = new BasePanel();
@@ -134,13 +197,13 @@ public class calenderFrame extends BaseFrame {
 			jp.setLine();
 			jpCenter.jpCenter.add(jp);
 			super.refresh();
-			
+
 		}
-		
+
 		jpTop.setFlowCenter().add(down);
 		jpTop.add(jl);
 		jpTop.add(up);
-		
+
 		super.refresh();
 	}
 

@@ -43,7 +43,7 @@ public class DbCreat {
 				+ "-- -----------------------------------------------------\r\n" + "-- Table `2023지방_3`.`schedule`\r\n"
 				+ "-- -----------------------------------------------------\r\n"
 				+ "CREATE TABLE IF NOT EXISTS `2023지방_3`.`schedule` (\r\n"
-				+ "  `s_no` INT(11) NOT NULL AUTO_INCREMENT,\r\n" + "  `data` DATE NULL,\r\n"
+				+ "  `s_no` INT(11) NOT NULL AUTO_INCREMENT,\r\n" + "  `date` DATE NULL,\r\n"
 				+ "  `depart` INT(11) NULL,\r\n" + "  `arrival` INT(11) NULL,\r\n" + "  `departTime` TIME NULL,\r\n"
 				+ "  `timeTaken` TIME NULL,\r\n" + "  `price` INT(11) NULL,\r\n" + "  PRIMARY KEY (`s_no`),\r\n"
 				+ "  INDEX `fk_schedule_nation1_idx` (`depart` ASC) VISIBLE,\r\n"

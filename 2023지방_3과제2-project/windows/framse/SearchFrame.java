@@ -12,7 +12,9 @@ import base.comp.BaseFrame;
 import base.comp.BaseLable;
 import base.comp.BasePanel;
 import base.comp.ImageLable;
+import base.comp.message;
 import jdbc.DbManager;
+import model.model;
 
 public class SearchFrame extends BaseFrame {
 
@@ -75,9 +77,17 @@ public class SearchFrame extends BaseFrame {
 			public void mouseClicked(MouseEvent e) {
 				// TODO Auto-generated method stub
 				super.mouseClicked(e);
+				if (jcStart.getSelectedIndex() == 0 || jcArrive.getSelectedIndex() == 0) {
+					message.error("출발지와 도착지를 선택하세요.");
+					return;
+				}
+				model.depart = jcStart.getSelectedIndex();
+				model.arrival = jcArrive.getSelectedIndex();
 			new calenderFrame();
 			}
 		});
+		
+		
 	}
 
 }
