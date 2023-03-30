@@ -12,14 +12,16 @@ import base.comp.BaseFrame;
 import base.comp.BaseLabel;
 import base.comp.BasePanel;
 import base.comp.ImageLabel;
+import base.comp.message;
 import jdbc.DbManager;
+import model.model;
 
 public class SearchFrame extends BaseFrame{
 
 	private Vector<Vector<String>> nationData;
 	private BaseCombo jcDpart;
 	private BaseCombo jcArrival;
-	private JTextField jtDepartDate;
+	public JTextField jtDepartDate;
 	private JButton jbOk;
 	private ImageLabel jlCalender;
 	private SearchFrame SearchFrame;
@@ -75,10 +77,25 @@ public class SearchFrame extends BaseFrame{
 			public void mousePressed(MouseEvent e) {
 				// TODO Auto-generated method stub
 				super.mousePressed(e);
-				new CalendarFrame(SearchFrame);
+				int depart = jcDpart.getSelectedIndex();
+				int arrival = jcArrival.getSelectedIndex();
+				if (depart == 0 && arrival == 0) {
+					message.error("출발지와 도착지를 선택하세요.");
+					return;
+				}
+				
+				model.getDepart = depart;
+				model.getArrival = arrival;
+				
+//				new CalendarFrame(SearchFrame);
+				new CalendatTraining(SearchFrame);
 			}
 		});
-		
+		jbOk.addActionListener(e -> {
+			
+			new ChoseFrame(this);
+			
+		});
 		
 	}
 

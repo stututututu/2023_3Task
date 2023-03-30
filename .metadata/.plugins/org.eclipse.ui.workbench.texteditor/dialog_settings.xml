@@ -13,11 +13,14 @@
 		<item key="selection" value="?"/>
 		<list key="findhistory">
 			<item value="&apos;asd&apos;"/>
+			<item value="= new BasePanel()"/>
+			<item value="comtinent"/>
 			<item value="jpCenter"/>
 		</list>
 		<list key="replacehistory">
 			<item value="?"/>
 			<item value=""/>
+			<item value="continent"/>
 			<item value="jp"/>
 		</list>
 	</section>

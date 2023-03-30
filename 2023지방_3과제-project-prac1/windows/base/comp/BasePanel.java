@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.MatteBorder;
 
 public class BasePanel extends JPanel{
 
@@ -15,6 +16,7 @@ public class BasePanel extends JPanel{
 	public BasePanel jpBottom;
 	public BasePanel jpLeft;
 	public BasePanel jpRight;
+	private int l;
 
 	public BasePanel() {
 		// TODO Auto-generated constructor stub
@@ -58,6 +60,11 @@ public class BasePanel extends JPanel{
 		
 		return this;
 		
+	}
+	public BasePanel setMatte(int t, int l, int b, int r) {
+		// TODO Auto-generated method stub
+		super.setBorder(new MatteBorder(t, l, b, r, Color.black));
+		return this;
 	}
 
 }

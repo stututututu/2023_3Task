@@ -40,4 +40,11 @@ public class BaseLabel extends JLabel {
 		return this;
 	}
 
+	public BaseLabel setlineBlue() {
+		// TODO Auto-generated method stub
+		super.setBorder(new LineBorder(Color.blue));
+		
+		return this;
+	}
+
 }
